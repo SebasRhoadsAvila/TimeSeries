@@ -1,6 +1,6 @@
 ### Project Overview
 
-This project investigates whether CODI transactions in Mexico can be explained by an equivalent variable that explains PIX transactions in Brazil. The analysis aims to establish a relationship between mobile phone access and banking operations using different econometric models.
+This project investigates whether CODI transactions in Mexico can be explained by an equivalent variable that explains PIX transactions in Brazil. The analysis aims to establish a relationship between mobile phone with internet access and banking operations using different econometric models.
 
 ### Brazil
 

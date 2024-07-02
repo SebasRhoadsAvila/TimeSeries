@@ -40,6 +40,7 @@ $\log(Y_t) = \beta_0 + \beta_1 \log(X_t) + U_t $
    - $\log(Y_t)$: Logarithm of banking operations.
    - $\log(X_t)$: Logarithm of mobile phone lines with internet access (exogenous variable).
    - $U_t$: Error term.
+
 ![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/PIX%26CODITransactions/Images/Imagen3.png)
 
    **Interpretation**:

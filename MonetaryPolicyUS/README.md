@@ -27,6 +27,37 @@ INF_t &= a_2 + b_{21} IR_{t-1} + b_{22} INF_{t-1} + b_{23} UNEMP_{t-1} + \epsilo
 UNEMP_t &= a_3 + b_{31} IR_{t-1} + b_{32} INF_{t-1} + b_{33} UNEMP_{t-1} + \epsilon_{3t}
 \end{align*}$$
 
+$$
+\begin{bmatrix}
+IR_t \\
+INF_t \\
+UNEMP_t
+\end{bmatrix} =
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23} \\
+b_{31} & b_{32} & b_{33}
+\end{bmatrix}
+\begin{bmatrix}
+IR_{t-1} \\
+INF_{t-1} \\
+UNEMP_{t-1}
+\end{bmatrix}
++
+\begin{bmatrix}
+\epsilon_{1t} \\
+\epsilon_{2t} \\
+\epsilon_{3t}
+\end{bmatrix}
+$$
+
+
 This type of VAR expresses each variable as a linear function of its own past values, considering the past values of all other variables and a serially uncorrelated error term: $\text{Cor}(\epsilon_{it}$, $\epsilon_{it-k}) = 0 $. Each equation in this model is estimated by ordinary least squares regression. The error terms in these regressions represent the "surprise" movements in the variables after accounting for their past values. If the variables are correlated with each other, the error terms in the reduced-form model will also be correlated across equations.
 
 In the article "Vector Autoregressions," the authors use 4 lags, meaning they utilize the regressors from 4 past periods:
@@ -41,6 +72,24 @@ In matrix form:
 
 $$ Y_t = A + B_1 Y_{t-1} + B_2 Y_{t-2} + B_3 Y_{t-3} + B_4 Y_{t-4} + \epsilon_t $$
 
+$$
+Y_t = \begin{bmatrix} IR_t \\ 
+INF_t \\ 
+UNEMP_t \end{bmatrix}
+A = 
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3
+\end{bmatrix}
+\epsilon_t = 
+\begin{bmatrix}
+\epsilon_{1t} \\
+\epsilon_{2t} \\
+\epsilon_{3t}
+\end{bmatrix}
+$$
+
 Where $B_i$ are 3x3 matrices for the coefficients of lags 1 to 4, respectively.
 
 #### Recursive Form:
@@ -50,6 +99,47 @@ IR_t &= a_1 + b_{11} IR_{t-1} + b_{12} INF_{t-1} + b_{13} UNEMP_{t-1} + \epsilon
 INF_t &= a_2 + b_{21} IR_{t-1} + b_{22} INF_{t-1} + b_{23} UNEMP_{t-1} + \delta_{21} IR_t + \epsilon_{2t} \\
 UNEMP_t &= a_3 + b_{31} IR_{t-1} + b_{32} INF_t + b_{33} UNEMP_{t-1} + \delta_{31} IR_t + \delta_{32} INF_t + \epsilon_{3t}
 \end{align*}$$
+
+$$
+\begin{bmatrix}
+IR_t \\
+INF_t \\
+UNEMP_t
+\end{bmatrix} =
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23} \\
+b_{31} & b_{32} & b_{33}
+\end{bmatrix}
+\begin{bmatrix}
+IR_{t-1} \\
+INF_{t-1} \\
+UNEMP_{t-1}
+\end{bmatrix}
++
+\begin{bmatrix}
+0 & 0 & 0 \\
+\delta_{21} & 0 & 0 \\
+\delta_{31} & \delta_{32} & 0
+\end{bmatrix}
+\begin{bmatrix}
+IR_t \\
+INF_t \\
+UNEMP_t
+\end{bmatrix}
++
+\begin{bmatrix}
+\epsilon_{1t} \\
+\epsilon_{2t} \\
+\epsilon_{3t}
+\end{bmatrix}
+$$
 
 This model constructs the error terms in each regression equation to be uncorrelated with the errors in the preceding equations. It achieves this by including some contemporaneous values as regressors. The results of a recursive VAR depend on the order of the variables. Changing the order changes the equations, coefficients, and residuals of the VAR.
 
@@ -65,6 +155,30 @@ In matrix form:
 
 $$Y_t = A + C Y_t + B_1 Y_{t-1} + B_2 Y_{t-2} + B_3 Y_{t-3} + B_4 Y_{t-4} + \epsilon_t$$
 
+$$
+Y_t = \begin{bmatrix} IR_t \\ 
+INF_t \\ 
+UNEMP_t \end{bmatrix}
+A = 
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3
+\end{bmatrix}
+\epsilon_t = 
+\begin{bmatrix}
+\epsilon_{1t} \\
+\epsilon_{2t} \\
+\epsilon_{3t}
+\end{bmatrix}
+C = 
+\begin{bmatrix}
+0 & 0 & 0 \\
+c_{21} & 0 & 0 \\
+c_{31} & c_{32} & 0
+\end{bmatrix}
+$$
+
 Where $B_i$ are 3x3 matrices for the coefficients of lags 1 to 4, respectively.
 
 #### Structural Form:
@@ -72,6 +186,59 @@ Where $B_i$ are 3x3 matrices for the coefficients of lags 1 to 4, respectively.
 This type of VAR uses economic theory to order the contemporaneous links between variables. Structural VARs require "assumptions" that allow correlations to be interpreted causally. These assumptions can apply to the entire VAR or just one equation. The number of structural VARs is limited only by the researcher's inventiveness.
 
 Theoretically, this model could look like the reduced-form model. However, the vector $\epsilon_t$ can be interpreted as a shock explained by the surprise elements of each variable of interest.
+
+$$
+\begin{bmatrix}
+IR_t \\
+INF_t \\
+UNEMP_t
+\end{bmatrix} =
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23} \\
+b_{31} & b_{32} & b_{33}
+\end{bmatrix}
+\begin{bmatrix}
+IR_{t-1} \\
+INF_{t-1} \\
+UNEMP_{t-1}
+\end{bmatrix}
++
+\begin{bmatrix}
+\epsilon_{1t} \\
+\epsilon_{2t} \\
+\epsilon_{3t}
+\end{bmatrix}
+$$
+
+where
+
+$$
+\begin{bmatrix}
+\epsilon_{1t} \\
+\epsilon_{2t} \\
+\epsilon_{3t}
+\end{bmatrix} =
+\begin{bmatrix}
+\delta_{11} & \delta_{12} & \delta_{13} \\
+\delta_{21} & \delta_{22} & \delta_{23} \\
+\delta_{31} & \delta_{32} & \delta_{33}
+\end{bmatrix}
+\begin{bmatrix}
+\omega_{1t} \\
+\omega_{2t} \\
+\omega_{3t}
+\end{bmatrix}
+$$
+
+The authors base the model on the following Taylor rule: 
+$R_t = r^* + 1.5 (\bar{\pi}_t - \pi^* ) - 1.25 (\bar{u}_t - u^*) + \text{lagged values of } R, \pi, u + \epsilon_t$
 
 ### Descriptive Analysis
 

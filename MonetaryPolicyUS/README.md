@@ -274,11 +274,17 @@ When performing this test in a programming language, we can directly obtain a $p
 
 That said, the Granger test can also be estimated as an individual significance test for each coefficient. This is the case in the work of Stock and Watson, whose results are shown below:
 
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/Imagen1.png)
+
 The table shows the $p-values$ of each time series relative to the dependent variable of each linear equation. Low values indicate it is easy and intuitive to reject the hypothesis that the dependent time series cannot be forecasted. This means there is a significant relationship between variables. However, this hypothesis cannot be rejected in two cases: the FED interest rate relative to inflation and the inflation rate relative to the unemployment rate, with values of 0.27 and 0.31, respectively.
 
 When replicating the hypothesis tests, we obtain different results. In our attempt, in each scenario, we reject the null hypothesis because their $p-values$ are very low.
 
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/Imagen2.png)
+
 In the next section, the authors provide the variance decomposition for different prediction horizons. Their table is divided into 3 sections, each part of the hypothesis of a shock in one variable, analyzing impulse response functions.
+
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/Imagen3.png)
 
 The data in the previous tables show, in each row, how much of the variability of the dependent series is explained through the independent series, starting from the assumption of a shock in one of the variables.
 
@@ -286,9 +292,15 @@ For example, the first table assumes a shock in the inflation rate. In the first
 
 In this case, we replicate the data with insignificant differences:
 
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/Imagen4.png)
+
 VARs capture comovements in time series that univariate or bivariate models do not detect. Statistics like Granger causality tests and impulse response functions are essential for representing these comovements and serve as references for theoretical macroeconomic models.
 
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/imagen5.png)
+
 Impulse response functions for the recursive VAR are shown in the matrix of 9 graphs. The first row shows the effect of a 1 percentage point unexpected increase in inflation on the three variables, as it processes through the recursive VAR system with coefficients estimated from real data. The second row shows the effect of a 1 percentage point unexpected increase in the unemployment rate, and the third row shows the corresponding effect for the interest rate. These estimated functions show patterns of persistent common variation. For example, an unexpected increase in inflation gradually fades over 24 quarters and is associated with a persistent increase in unemployment and interest rates.
+
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/Imagen6.png)
 
 Notably, the second matrix is a replication of the first.
 
@@ -296,7 +308,9 @@ Notably, the second matrix is a replication of the first.
 
 For forecasts, predictions are evaluated at various horizons, such as two quarters, four quarters, and eight quarters. These predictions are compared with those made by a univariate autoregression model and a "random walk" (or "no change") model.
 
-Table 2, titled "Root Mean Squared Errors of Simulated Out-Of-Sample Forecasts, 1985:1–2000:IV," presents the mean squared forecast errors calculated recursively for univariate and vector autoregressions, as well as for a random walk model. The results for the random walk and univariate autoregressions are shown in the columns labeled RW (random walk) and AR (auto regression), respectively. Each model was estimated using data from 1960:I to the start of the forecast period.
+The next table, titled "Root Mean Squared Errors of Simulated Out-Of-Sample Forecasts, 1985:1–2000:IV," presents the mean squared forecast errors calculated recursively for univariate and vector autoregressions, as well as for a random walk model. The results for the random walk and univariate autoregressions are shown in the columns labeled RW (random walk) and AR (auto regression), respectively. Each model was estimated using data from 1960:I to the start of the forecast period.
+
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/Imagen7.png)
 
 An ECM is calculated as follows:
 
@@ -304,7 +318,11 @@ $$ECM = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
 
 Where $n$ is the total number of observations, $y_i$ is the observed or actual value for observation $i$, and $\hat{y}_i$ is the predicted value for observation $i$.
 
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/Imagen8.png)
+
+
 The replicated results contain significantly different values. However, both tables reach the same conclusion. The data indicate that, in many cases, the VAR improves or performs similarly to univariate autoregression, and both outperform the random walk forecast. In simple terms, the VAR provides accurate forecasts compared to other models, especially for forecasting inflation, unemployment, and interest rates.
+
 
 ### Structural Inference
 
@@ -321,6 +339,9 @@ $$Y_t = A + B_1 Y_{t-1} + B_2 Y_{t-2} + B_3 Y_{t-3} + B_4 Y_{t-4} + \epsilon_t$$
 Where $\epsilon_t$ is the vector of uncorrelated "innovation" errors, constrained as follows:
 
 The first constraints correspond to the retrospective model, where monetary policy does not respond to contemporary shocks in inflation or unemployment. The second constraint corresponds to the prospective model, where coefficients $\delta_{31}$ and $\delta_{32}$ allow a relationship between monetary policy and contemporary shocks of the other variables.
+
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/MonetaryPolicyUS/Images/Imagen10.png)
+
 
 ### Policy Analysis
 

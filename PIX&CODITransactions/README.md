@@ -12,11 +12,11 @@ This project investigates whether CODI transactions in Mexico can be explained b
 #### Econometric Model
 
 **Linear Log-Log Model**:
-\[ \log(Y_t) = \beta_0 + \beta_1 \log(X_t) + U_t \]
+$\log(Y_t) = \beta_0 + \beta_1 \log(X_t) + U_t $
 
-- \( \log(Y_t) \): Logarithm of banking operations.
-- \( \log(X_t) \): Logarithm of mobile phone accesses.
-- \( U_t \): Error term.
+- $\log(Y_t)$: Logarithm of banking operations.
+- $\log(X_t)$: Logarithm of mobile phone accesses.
+- $U_t$: Error term.
 
 **Interpretation**:
 - Holding everything else constant, a 1% increase in mobile phone accesses is associated with an expected increase of approximately 22% in banking operations.
@@ -31,31 +31,32 @@ This project investigates whether CODI transactions in Mexico can be explained b
 #### Econometric Models
 
 1. **ARIMAX(1, 0, 3) Model**:
-\[ \log(Y_t) = \beta_0 + \beta_1 \log(Y_{t-1}) + \delta_1 U_{t-1} + \delta_2 U_{t-2} + \delta_3 U_{t-3} + \alpha_1 \log(X_t) + U_t \]
+ $\log(Y_t) = \beta_0 + \beta_1 \log(Y_{t-1}) + \delta_1 U_{t-1} + \delta_2 U_{t-2} + \delta_3 U_{t-3} + \alpha_1 \log(X_t) + U_t $
 
-   - \( \log(Y_t) \): Logarithm of banking operations.
-   - \( \log(X_t) \): Logarithm of mobile phone lines with internet access (exogenous variable).
-   - \( U_t \): Error term.
+   - $\log(Y_t)$: Logarithm of banking operations.
+   - $\log(X_t)$: Logarithm of mobile phone lines with internet access (exogenous variable).
+   - $U_t$: Error term.
 
    **Interpretation**:
    - The exogenous variable has a positive effect, with approximately a 7% increase in banking operations.
 
    **Note**:
-   - The ARIMAX(1, 0, 3) model shows a bias due to the non-normality of residuals, possibly explained by three outliers in the data. However, with 48 observations (months), the expected values of the coefficients are reliable.
+   - The $ARIMAX(1, 0, 3)$ model shows a bias due to the non-normality of residuals, possibly explained by three outliers in the data. However, with 48 observations (months), the expected values of the coefficients are reliable.
 
 2. **Linear Log-Log Model**:
-\[ \log(Y_t) = \beta_0 + \beta_1 \log(X_t) + U_t \]
+$\log(Y_t) = \beta_0 + \beta_1 \log(X_t) + U_t $
 
-   - \( \log(Y_t) \): Logarithm of banking operations.
-   - \( \log(X_t) \): Logarithm of mobile phone lines with internet access.
-   - \( U_t \): Error term.
+   - $\log(Y_t)$: Logarithm of banking operations.
+   - $\log(X_t)$: Logarithm of mobile phone lines with internet access.
+   - $U_t$: Error term.
 
    **Interpretation**:
-   - This model did not meet several assumptions (e.g., no autocorrelation, homogeneity, normality). Interestingly, the coefficient for \( X \) is approximately the same as that in the ARIMAX(1, 0, 3) model.
+   - This model did not meet several assumptions (e.g., no autocorrelation, homogeneity, normality). Interestingly, the coefficient for $\( X \)$ is approximately the same as that in the $ARIMAX(1, 0, 3)$ model.
 
 ### Conclusion
 
 The analysis indicates that mobile phone access can significantly explain banking operations in both Brazil and Mexico. Despite some model biases and assumption violations, the results suggest a strong relationship between the number of mobile phone accesses and the number of banking transactions.
+
 
 ---
 

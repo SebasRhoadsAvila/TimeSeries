@@ -18,8 +18,12 @@ $\log(Y_t) = \beta_0 + \beta_1 \log(X_t) + U_t $
 - $\log(X_t)$: Logarithm of mobile phone accesses.
 - $U_t$: Error term.
 
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/PIX%26CODITransactions/Images/Imagen1.png)
+
 **Interpretation**:
 - Holding everything else constant, a 1% increase in mobile phone accesses is associated with an expected increase of approximately 22% in banking operations.
+
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/PIX%26CODITransactions/Images/Imagen2.png)
 
 ### Mexico
 
@@ -36,9 +40,12 @@ $\log(Y_t) = \beta_0 + \beta_1 \log(X_t) + U_t $
    - $\log(Y_t)$: Logarithm of banking operations.
    - $\log(X_t)$: Logarithm of mobile phone lines with internet access (exogenous variable).
    - $U_t$: Error term.
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/PIX%26CODITransactions/Images/Imagen3.png)
 
    **Interpretation**:
    - The exogenous variable has a positive effect, with approximately a 7% increase in banking operations.
+
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/PIX%26CODITransactions/Images/Imagen4.png)
 
    **Note**:
    - The $ARIMAX(1, 0, 3)$ model shows a bias due to the non-normality of residuals, possibly explained by three outliers in the data. However, with 48 observations (months), the expected values of the coefficients are reliable.
@@ -50,8 +57,12 @@ $\log(Y_t) = \beta_0 + \beta_1 \log(X_t) + U_t $
    - $\log(X_t)$: Logarithm of mobile phone lines with internet access.
    - $U_t$: Error term.
 
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/PIX%26CODITransactions/Images/imagen5.png)
+
    **Interpretation**:
    - This model did not meet several assumptions (e.g., no autocorrelation, homogeneity, normality). Interestingly, the coefficient for $\( X \)$ is approximately the same as that in the $ARIMAX(1, 0, 3)$ model.
+
+![Image](https://github.com/SebasRhoadsAvila/TimeSeries/blob/main/PIX%26CODITransactions/Images/Imagen6.png)
 
 ### Conclusion
 

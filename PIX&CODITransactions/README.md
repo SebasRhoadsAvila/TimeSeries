@@ -72,4 +72,4 @@ The analysis indicates that mobile phone access can significantly explain bankin
 
 ---
 
-Replace the `image_url_X` placeholders with the actual URLs or paths to the images you will upload to your GitHub repository. This will ensure that the text is well-integrated with the corresponding images, providing a clear and comprehensive presentation of the analysis.
+

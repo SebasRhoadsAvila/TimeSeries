@@ -1,3 +1,3 @@
 
 
-This repository is meant por diferent projects where Time Series Analysis is critical.
+This repository is meant por different projects where Time Series Analysis is critical.

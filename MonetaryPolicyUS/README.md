@@ -334,6 +334,58 @@ VARs often employ "identifying assumptions" to determine contemporary relationsh
 
 Recall that a structural model can look like this:
 
+$$
+\begin{bmatrix}
+IR_t \\
+INF_t \\
+UNEMP_t
+\end{bmatrix} =
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+a_3
+\end{bmatrix}
++
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13} \\
+b_{21} & b_{22} & b_{23} \\
+b_{31} & b_{32} & b_{33}
+\end{bmatrix}
+\begin{bmatrix}
+IR_{t-1} \\
+INF_{t-1} \\
+UNEMP_{t-1}
+\end{bmatrix}
++
+\begin{bmatrix}
+\epsilon_{1t} \\
+\epsilon_{2t} \\
+\epsilon_{3t}
+\end{bmatrix}
+$$
+
+
+
+$$
+\begin{bmatrix}
+\epsilon_{1t} \\
+\epsilon_{2t} \\
+\epsilon_{3t}
+\end{bmatrix} =
+\begin{bmatrix}
+\delta_{11} & \delta_{12} & \delta_{13} \\
+\delta_{21} & \delta_{22} & \delta_{23} \\
+\delta_{31} & \delta_{32} & \delta_{33}
+\end{bmatrix}
+\begin{bmatrix}
+\omega_{1t} \\
+\omega_{2t} \\
+\omega_{3t}
+\end{bmatrix}
+$$
+
+So, the model proposed is the following:
+
 $$Y_t = A + B_1 Y_{t-1} + B_2 Y_{t-2} + B_3 Y_{t-3} + B_4 Y_{t-4} + \epsilon_t$$
 
 Where $\epsilon_t$ is the vector of uncorrelated "innovation" errors, constrained as follows:
